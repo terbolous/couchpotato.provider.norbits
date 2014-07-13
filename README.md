@@ -5,7 +5,7 @@ Norbits search provider for Couchpotato
 
 ### How-to install
 
-- Make an folder named rarat at your customs_plugin folder and place the _init_.py and main.py file inside
+- Make an folder named norbits at your customs_plugin folder and place the _init_.py and main.py file inside
 
 - Your custom_plugin folder, which is located within your config folder. See Settings->About->Directories (second folder is your config folder) for location
 
