@@ -73,8 +73,8 @@ class Norbits(TorrentProvider, MovieProvider):
                         'url': self.urls['download'] % (result['id'], self.conf('passkey')),
                         'detail_url': self.urls['detail'] % result['id'],
                         'size': tryInt(int(result['size']) / 1024 / 1024),
-                        'seeders': result['seeders'],
-                        'leechers': result['leechers']
+                        'seeders': tryInt(result['seeders']),
+                        'leechers': tryInt(result['leechers'])
                     })
             except:
                 log.error('Failed getting resutls from %s: %s' % (self.getName(), traceback.format_exc()))
