@@ -72,9 +72,9 @@ class Norbits(TorrentProvider, MovieProvider):
                         'name': result['name'],
                         'url': self.urls['download'] % (result['id'], self.conf('passkey')),
                         'detail_url': self.urls['detail'] % result['id'],
-                        'size': tryInt(int(result['size']) / 1024 / 1024)
-                        #'seeders': 1, # FIXME: this is currently missing in the API response
-                        #'leechers': 1, # FIXME: this is currently missing in the API response
+                        'size': tryInt(int(result['size']) / 1024 / 1024),
+                        'seeders': result['seeders'],
+                        'leechers': result['leechers']
                     })
             except:
                 log.error('Failed getting resutls from %s: %s' % (self.getName(), traceback.format_exc()))
