@@ -66,7 +66,7 @@ class Norbits(TorrentProvider, MovieProvider):
             result = self.getJsonData(self.urls['api'], data=json.dumps(post_data))
             log.debug('Result: %s' % result)
             if result:
-                log.debyg('We got: %s ' % json.dumps(result))
+                log.debug('We got: %s ' % json.dumps(result))
                 if int(result['status']) != 0:
                     log.error('Error searching norbits because of wrong status: %s' % result['message'])
                     log.error('Result: %s' % result)
