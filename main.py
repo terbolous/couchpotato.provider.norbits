@@ -67,7 +67,7 @@ class Norbits(TorrentProvider, MovieProvider):
             log.debug('Result: %s' % result)
             if result:
                 log.debyg('We got: %s ' % json.dumps(result))
-                if result['status'] != '0':
+                if int(result['status']) != 0:
                     log.error('Error searching norbits because of wrong status: %s' % result['message'])
                     log.error('Result: %s' % result)
                 else:
@@ -76,7 +76,7 @@ class Norbits(TorrentProvider, MovieProvider):
                         log.info('Nothing found for %s' % search)
                         return None
                     else:
-                        return result['data']['torrents']
+                        return result_data['torrents']
         except Exception, e:
             log.error('Error searching norbits due to exception: %s. type: %s Result: %s' % (e, type(e), result))
         return None
